@@ -4,46 +4,58 @@ import { AppRegistry,View,Text,StyleSheet
 
 export default class home extends Component{
 	 static navigationOptions = {
-    title: 'Welcome',
+		title: 'Welcome',
   };
 	render(){
 		const { navigate } = this.props.navigation;
 		return(
-		 <View style={{display:'flex',alignItems:'center', justifyContent:'center'}}>
-       <Text style={{margin:10,fontWeight:'bold',color:'#000'}}>Hello from home</Text>
+	  <View style={styles.container}>
+       <Text style={styles.pageName}>Hello from home</Text>
 	   
-	    <TouchableOpacity
-	 style={styles.cat}
-	  onPress={() => navigate('Products', {cat:'electronics'})}
-	   ><Text Text style={{color:'#fff'}}>Electronics ></Text>
+	   <TouchableOpacity
+		style={styles.cat}
+		onPress={() => navigate('Products',{cat:'electronics',id:'1'})}>
+	   <Text style={styles.btnText}> Electronics > </Text>
+	   </TouchableOpacity>
+	   
+	   <TouchableOpacity
+		style={styles.cat}
+		onPress={() => navigate('Products',{cat:'automobiles',id:'2'})}>
+	   <Text style={styles.btnText}> Automobiles > </Text>
 	   </TouchableOpacity>
 	   
 	    <TouchableOpacity
-	 style={styles.cat}
-	  onPress={() => navigate('Products', {cat:'automobiles'})}
-	   ><Text Text style={{color:'#fff'}}>Automobiles ></Text>
-	   </TouchableOpacity>
+		 style={styles.cat}
+		 onPress={() => navigate('Products',{cat:'Movies',id:'3'})}>
+		<Text style={styles.btnText}> Movies > </Text>
+	    </TouchableOpacity>
 	   
 	    <TouchableOpacity
-	 style={styles.cat}
-	  onPress={() => navigate('Products', {cat:'Movies'})}
-	   ><Text Text style={{color:'#fff'}}>Movies ></Text>
+		 style={styles.cat}
+		 onPress={() => navigate('Products',{cat:'Books',id:'4'})}>
+		<Text style={styles.btnText}> Books > </Text>
 	   </TouchableOpacity>
 	   
-	    <TouchableOpacity
-	 style={styles.cat}
-	  onPress={() => navigate('Products', {cat:'Books'})}
-	   ><Text Text style={{color:'#fff'}}>Books ></Text>
-	   </TouchableOpacity>
 	   
       </View>
 		);
 	}
 }
 const styles = StyleSheet.create({
+	container:{
+		display:'flex',alignItems:'center',
+		justifyContent:'center'
+	},
 	cat:{
 		backgroundColor:'blue',
 		padding:10,margin:10,width:'95%'
+	},
+	pageName:{
+		margin:10,fontWeight:'bold',
+		color:'#000', textAlign:'center'
+	},
+	btnText:{
+		color:'#fff',fontWeight:'bold'
 	}
 })
 AppRegistry.registerComponent('home', () => home);
