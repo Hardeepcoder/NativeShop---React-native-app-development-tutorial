@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry,View,Text,StyleSheet
-,Button,TouchableOpacity } from 'react-native';
+,Button,TouchableOpacity,StatusBar } from 'react-native';
 
 export default class home extends Component{
 	 static navigationOptions = {
@@ -9,34 +9,28 @@ export default class home extends Component{
 	render(){
 		const { navigate } = this.props.navigation;
 		return(
-	  <View style={styles.container}>
-       <Text style={styles.pageName}>Hello from home</Text>
-	   
+	  <View style={styles.container}>	  
+       <Text style={styles.pageName}>Native Shop</Text>	   
 	   <TouchableOpacity
 		style={styles.cat}
-		onPress={() => navigate('Products',{cat:'electronics',id:'1'})}>
+		onPress={() => navigate('Products',{cat:'Electronics',id:'1'})}>
 	   <Text style={styles.btnText}> Electronics > </Text>
-	   </TouchableOpacity>
-	   
+	   </TouchableOpacity>	   
 	   <TouchableOpacity
 		style={styles.cat}
-		onPress={() => navigate('Products',{cat:'automobiles',id:'2'})}>
+		onPress={() => navigate('Products',{cat:'Automobiles',id:'2'})}>
 	   <Text style={styles.btnText}> Automobiles > </Text>
-	   </TouchableOpacity>
-	   
+	   </TouchableOpacity>	   
 	    <TouchableOpacity
 		 style={styles.cat}
 		 onPress={() => navigate('Products',{cat:'Movies',id:'3'})}>
 		<Text style={styles.btnText}> Movies > </Text>
-	    </TouchableOpacity>
-	   
+	    </TouchableOpacity>	   
 	    <TouchableOpacity
 		 style={styles.cat}
 		 onPress={() => navigate('Products',{cat:'Books',id:'4'})}>
 		<Text style={styles.btnText}> Books > </Text>
-	   </TouchableOpacity>
-	   
-	   
+	   </TouchableOpacity>  
       </View>
 		);
 	}
@@ -47,7 +41,7 @@ const styles = StyleSheet.create({
 		justifyContent:'center'
 	},
 	cat:{
-		backgroundColor:'blue',
+		backgroundColor:'orange',
 		padding:10,margin:10,width:'95%'
 	},
 	pageName:{
