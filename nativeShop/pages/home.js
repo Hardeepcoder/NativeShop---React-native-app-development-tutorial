@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { AppRegistry,View,Text,StyleSheet
-,Button,TouchableOpacity,StatusBar } from 'react-native';
+,Button,TouchableOpacity,StatusBar,Image } from 'react-native';
 
 export default class home extends Component{
-	 static navigationOptions = {
-		title: 'Welcome',
-  };
+static navigationOptions= ({navigation}) =>({
+		  title: 'Home',	
+	});  
+  
 	render(){
 		const { navigate } = this.props.navigation;
 		return(
-	  <View style={styles.container}>	  
+	  <View style={styles.container}>	
+
        <Text style={styles.pageName}>Native Shop</Text>	   
 	   <TouchableOpacity
 		style={styles.cat}
@@ -50,6 +52,12 @@ const styles = StyleSheet.create({
 	},
 	btnText:{
 		color:'#fff',fontWeight:'bold'
-	}
-})
+	},
+	 icon: {
+    width: 24,
+    height: 24,
+  },
+});
+
+
 AppRegistry.registerComponent('home', () => home);
