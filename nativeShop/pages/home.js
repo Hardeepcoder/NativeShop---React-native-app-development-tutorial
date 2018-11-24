@@ -33,6 +33,8 @@ static navigationOptions= ({navigation}) =>({
 		 onPress={() => navigate('Products',{cat:'Books',id:'4'})}>
 		<Text style={styles.btnText}> Books > </Text>
 	   </TouchableOpacity>  
+	   
+	  
       </View>
 		);
 	}
@@ -44,6 +46,10 @@ const styles = StyleSheet.create({
 	},
 	cat:{
 		backgroundColor:'orange',
+		padding:10,margin:10,width:'95%'
+	},
+	cat2:{
+		backgroundColor:'blue',
 		padding:10,margin:10,width:'95%'
 	},
 	pageName:{

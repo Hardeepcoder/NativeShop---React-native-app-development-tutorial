@@ -3,7 +3,7 @@ import { AppRegistry,View,Text,
 StyleSheet,FlatList,Image,StatusBar,
 TouchableOpacity,Button, RefreshControl } from 'react-native';
 
-export default class products extends Component{
+export default class details extends Component{
 	static navigationOptions= ({navigation}) =>({
 		  title: 'Products',
 		headerRight:<TouchableOpacity onPress={() => navigation.navigate("Home")}
@@ -40,7 +40,7 @@ export default class products extends Component{
 
 		return(
 		 <View style={styles.container}>
-		<Text style={styles.pageName}>{params.cat}</Text>
+
 		  <FlatList
 		  data={this.state.data}
 		  keyExtractor={(x,i) => i}
@@ -50,11 +50,8 @@ export default class products extends Component{
 				'https://hardeepwork.000webhostapp.com/laravel/LaraShop55//public/img/' +item.pro_img}} />
 		   <Text style={styles.price}>${item.pro_price}</Text>
 		  <Text style={styles.proName}>{item.pro_name}</Text>
-		  <Button
-		  title="View Details"
-		  onPress={() => navigate('Details', {id: item.id})}
-		  />
-
+		  <Text>{item.pro_info}</Text>
+		  <Text> Spl Price {item.spl_price} </Text>
 		  </View>
 		  }
 		  refreshControl={
@@ -92,4 +89,4 @@ const styles = StyleSheet.create({
 		padding:5,color:'blue',textAlign:'center'
 	}
 })
-AppRegistry.registerComponent('products', () => products);
+AppRegistry.registerComponent('details', () => details);
